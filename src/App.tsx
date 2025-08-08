@@ -1,18 +1,16 @@
-
-import { useState } from 'react'
-import CatMap from './components/CatMap'
-import { useSimulatedCat } from './hooks/useSimulatedCat'
+import { useState } from "react";
+import CatMap from "./components/CatMap";
+import { useSimulatedCat } from "./hooks/useSimulatedCat";
 
 export default function App() {
-  const [running, setRunning] = useState(true)
-  const [speed, setSpeed] = useState(1000)
-  // Center on Kathmandu
+  const [running, setRunning] = useState(true);
+  const [speed, setSpeed] = useState(1000);
+  // Center on Zoo aquarium Madrid
   const { point, trail, stats } = useSimulatedCat({
-    start: { lat: 27.7172, lng: 85.3240 },
+    start: { lat: 40.408523, lng: -3.761988 },
     intervalMs: speed,
-    running
-  })
-
+    running,
+  });
   return (
     <div className="app">
       <header>
@@ -23,12 +21,18 @@ export default function App() {
           </div>
         </div>
         <div className="controls">
-          <button className="btn" onClick={() => setRunning(v => !v)} aria-pressed={running}>
+          <button className="btn" onClick={() => setRunning((v) => !v)} aria-pressed={running}>
             {running ? "Pause" : "Resume"}
           </button>
-          <button className="btn" onClick={() => setSpeed(250)} aria-pressed={speed===250}>4× speed</button>
-          <button className="btn" onClick={() => setSpeed(1000)} aria-pressed={speed===1000}>1× speed</button>
-          <button className="btn" onClick={() => setSpeed(2000)} aria-pressed={speed===2000}>0.5× speed</button>
+          <button className="btn" onClick={() => setSpeed(250)} aria-pressed={speed === 250}>
+            4× speed
+          </button>
+          <button className="btn" onClick={() => setSpeed(1000)} aria-pressed={speed === 1000}>
+            1× speed
+          </button>
+          <button className="btn" onClick={() => setSpeed(2000)} aria-pressed={speed === 2000}>
+            0.5× speed
+          </button>
         </div>
       </header>
 
@@ -53,18 +57,16 @@ export default function App() {
           <div className="label">Trail Points</div>
           <div className="value">{stats.totalPoints}</div>
         </div>
-        <div className="card">
-          <div className="label">Mode</div>
-          <div className="value"><span className="badge" aria-label="Demo mode">Simulation</span></div>
-        </div>
       </section>
 
       <CatMap point={point} trail={trail} />
 
       <footer>
         <div>Built with React + Leaflet • WCAG-friendly controls</div>
-        <a href="https://github.com/meetprateek" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/prateekkarki/cat-tag-realtime-demo" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
       </footer>
     </div>
-  )
+  );
 }

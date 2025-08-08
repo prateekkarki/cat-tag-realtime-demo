@@ -1,19 +1,110 @@
-
-:root { --bg:#0b1220; --card:#101a2b; --text:#e9eef7; --muted:#9fb3c8; --accent:#63b3ed; }
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif; }
-.app { display: grid; grid-template-rows: auto 1fr auto; height: 100%; }
-header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; background: var(--card); border-bottom: 1px solid #18263f; }
-header h1 { font-size: 16px; margin: 0; }
-header .sub { color: var(--muted); font-size: 12px; }
-.controls { display:flex; gap:8px; flex-wrap:wrap; }
-.btn { background:#172642; color:var(--text); border:1px solid #20365e; padding:8px 12px; border-radius:10px; cursor:pointer; }
-.btn[aria-pressed="true"] { outline: 2px solid var(--accent); }
-.badge { background:#142136; color: var(--muted); padding:6px 10px; border-radius: 999px; border:1px solid #1d3255; }
-.panel { display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); padding:10px; background: var(--card); border-bottom:1px solid #18263f;}
-.panel .card { background:#0f1728; border:1px solid #1b2c4a; border-radius:14px; padding:10px 12px; }
-.label { color: var(--muted); font-size: 12px; }
-.value { font-size: 16px; }
-.map { height: 100%; width: 100%; }
-footer { padding:10px 14px; display:flex; justify-content:space-between; align-items:center; background: var(--card); border-top: 1px solid #18263f; }
-a { color: var(--accent); text-decoration: none; }
+:root {
+  --bg: #0b1220;
+  --card: #101a2b;
+  --text: #e9eef7;
+  --muted: #9fb3c8;
+  --accent: #63b3ed;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+.app {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--card);
+  border-bottom: 1px solid #18263f;
+}
+header h1 {
+  font-size: 16px;
+  margin: 0;
+}
+header .sub {
+  color: var(--muted);
+  font-size: 12px;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn {
+  background: #172642;
+  color: var(--text);
+  border: 1px solid #20365e;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn[aria-pressed="true"] {
+  outline: 2px solid var(--accent);
+}
+.badge {
+  background: #142136;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #1d3255;
+}
+.map-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: var(--card);
+  border-bottom: 1px solid #18263f;
+  height: 100%;
+}
+.panel {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 10px;
+  background: var(--card);
+  border-bottom: 1px solid #18263f;
+  height: 200px;
+}
+.panel .card {
+  background: #0f1728;
+  border: 1px solid #1b2c4a;
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+.label {
+  color: var(--muted);
+  font-size: 12px;
+}
+.value {
+  font-size: 16px;
+}
+.map {
+  height: 100%;
+  width: 100%;
+}
+footer {
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  border-top: 1px solid #18263f;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
