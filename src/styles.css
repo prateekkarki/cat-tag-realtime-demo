@@ -77,13 +77,16 @@ header .sub {
   padding: 10px;
   background: var(--card);
   border-bottom: 1px solid #18263f;
-  height: 200px;
+  height: 100%;
+  min-height: 80px;
+  max-height: 400px;
 }
 .panel .card {
   background: #0f1728;
   border: 1px solid #1b2c4a;
   border-radius: 14px;
   padding: 10px 12px;
+  height: 60px;
 }
 .label {
   color: var(--muted);
